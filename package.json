@@ -1,0 +1,23 @@
+{
+  "name": "videomaker",
+  "version": "1.0.0",
+  "description": "Projeto open source para criação automática de vídeos e postagem no YouTube",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alldias/video-maker.git"
+  },
+  "keywords": [
+    "robô",
+    "automatização"
+  ],
+  "author": "Alexandre Dias de Souza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alldias/video-maker/issues"
+  },
+  "homepage": "https://github.com/alldias/video-maker#readme"
+}
