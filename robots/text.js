@@ -6,8 +6,8 @@ const watsonApiKey = require('../credentials/watson-nlu.json').apikey
 const NaturalLanguageUnderstandingV1 = require('watson-developer-cloud/natural-language-understanding/v1.js')
 
 var nlu = new NaturalLanguageUnderstandingV1({
-    version: '2018-11-16',
     iam_apikey: watsonApiKey,
+    version: '2018-11-16',
     url: 'https://gateway.watsonplatform.net/natural-language-understanding/api'
 })
 
