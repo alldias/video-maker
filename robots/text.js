@@ -67,7 +67,7 @@ async function robot() {
 
     async function fetchKeywordsOfAllSentences(content){
         for (const sentence of content.sentences){
-            sentence.keyword = await fetchWatsonAndReturnKeywords(sentence.text)
+            sentence.keywords = await fetchWatsonAndReturnKeywords(sentence.text)
         }        
     }
 
@@ -80,9 +80,7 @@ async function robot() {
                 }
             }, (error, response) => {
                 if(error) {
-                    throw error
-                    // console.log(error);
-                    return;
+                    throw error                    
                 }
 
                 const keywords = response.keywords.map((keyword) => {
