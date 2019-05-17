@@ -25,6 +25,7 @@ async function robot(){
             sentence.googleSearchQuery = query
         }
     }
+
     async function fetchGoogleAndReturnImagesLinks(query){
         const response = await customSearch.cse.list({
             auth: googleSearchCredentials.apikey,
@@ -40,6 +41,7 @@ async function robot(){
 
         return imagesUrl
     }
+
     async function downloadAllImages(content){
         content.downloadedImages = []
 
@@ -65,17 +67,20 @@ async function robot(){
             }
         }
     }
+
     async function downloadAndSave(url, fileName){
         return imageDownloader.image({
             url: url,
             dest: `./content/${fileName}`
         })
     }
+
     async function convertAllImages(content){
         for( let sentenceIndex = 0; sentenceIndex < content.sentences.length; sentenceIndex++){
             await convertImage(sentenceIndex)
         }
     }
+
     async function convertImage(sentenceIndex) {
         return new Promise((resolve, reject) => {
             const inputFile = `./content/${sentenceIndex}-original.png[0]`
@@ -113,11 +118,13 @@ async function robot(){
                 })
         })
     }
+
     async function createdAllSentenceImages(content){
         for (let sentenceIndex = 0; sentenceIndex < content.sentences.length; sentenceIndex++){
             await createSentenceImage(sentenceIndex, content.sentences[sentenceIndex].text)
         }
     }
+
     async function createSentenceImage(sentenceIndex, sentenceText) {
         return new Promise(function(resolve, reject) {
             const outputFile = `./content/${sentenceIndex}-sentence.png`
@@ -167,6 +174,7 @@ async function robot(){
                 })
         })
     }
+
     async function createYouTubeThumbnail() {
         return new Promise((resolve, reject) => {
             const sentenceIndex = 0
